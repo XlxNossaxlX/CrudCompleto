@@ -1,0 +1,46 @@
+﻿@page
+@model ContosoUniversity.Pages.Courses.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-5">
+    <h2>Course Details</h2>
+
+    <div>
+        <h4>Course</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Course ID
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Course.CourseID)
+            </dd>
+            <dt class="col-sm-2">
+                Title
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Course.Title)
+            </dd>
+            <dt class="col-sm-2">
+                Credits
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Course.Credits)
+            </dd>
+            <dt class="col-sm-2">
+                Department
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Course.Department.Name)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="mt-3">
+        <a asp-page="./Edit" asp-route-id="@Model.Course.CourseID" class="btn btn-primary">Edit</a>
+        <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
